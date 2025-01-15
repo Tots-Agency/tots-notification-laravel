@@ -19,7 +19,7 @@ class TotsNotificationController extends BaseController
 
     public function list(Request $request)
     {
-        $notifications = $this->repository->getLast($request->user()->id);
+        $notifications = $this->repository->getLasts($request->user()->id);
         return response()->json(TotsNotificationResource::collection($notifications));
     }
 }

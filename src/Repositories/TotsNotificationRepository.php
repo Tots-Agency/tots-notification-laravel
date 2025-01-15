@@ -6,11 +6,12 @@ use Tots\Notification\Models\TotsNotification;
 
 class TotsNotificationRepository
 {
-    public function getLast($userId)
+    public function getLasts($userId)
     {
         return TotsNotification::where('user_id', $userId)
         ->orderBy('created_at', 'desc')
-        ->first();
+        ->limit(50)
+        ->get();
     }
 
     public function create($userId, $type, $title, $caption)
