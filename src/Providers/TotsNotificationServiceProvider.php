@@ -27,7 +27,7 @@ class TotsNotificationServiceProvider extends ServiceProvider
     {
         $mainPath = database_path('migrations');
         $paths = array_merge([
-            './vendor/tots/notification-lumen/database/migrations'
+            './vendor/tots/notification-laravel/database/migrations'
         ], [$mainPath]);
         $this->loadMigrationsFrom($paths);
     }
