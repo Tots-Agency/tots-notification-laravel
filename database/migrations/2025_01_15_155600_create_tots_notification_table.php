@@ -25,7 +25,7 @@ return new class extends Migration
             $table->tinyInteger('is_email')->nullable(false)->default(0);
             $table->timestamps();
 
-            $table->foreign('user_id')->references('id')->on('tots_user');
+            $table->foreign('user_id')->references('id')->on('tots_user')->onDelete('cascade');
         });
     }
 
